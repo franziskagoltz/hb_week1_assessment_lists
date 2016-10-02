@@ -40,7 +40,9 @@ def print_indices(items):
         2 Volvo
     """
 
-    print "Nothing at all"
+    # Using the enumerate generator to print out the index and the item
+    for index, item in enumerate(items):
+        print index, item
 
 
 def foods_in_common(foods1, foods2):
@@ -71,7 +73,8 @@ def foods_in_common(foods1, foods2):
 
     """
 
-    return ['the wrong thing']
+    # Using a set to find the overlapping items, then turning the result into a sorted list.
+    return sorted(list(set(foods1) & set(foods2)))
 
 
 def every_other_item(items):
@@ -88,7 +91,8 @@ def every_other_item(items):
        ['you', 'are', 'good', 'at', 'code']
     """
 
-    return ['the wrong thing']
+    # Using list slicing to return every second item from a list
+    return items[::2]
 
 
 def largest_n_items(items, n):
@@ -113,8 +117,10 @@ def largest_n_items(items, n):
         [3, 3]
     """
 
-    return []
-
+    if n > 0:
+        return sorted(items)[-n:]
+    else:
+        return []
 
 #####################################################################
 # END OF ASSESSMENT: You can ignore everything below.
